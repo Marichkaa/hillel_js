@@ -17,46 +17,63 @@
 Оператор typeof повертає рядкове значення, яке вказує на тип даних об'єкта.
 */
 
-// console.log(typeof "Hello"); // Результат: ?
-// console.log(typeof 42);    // Результат: ?
-// console.log(typeof true);  // Результат: ?
-// console.log(typeof "42");  // Результат: ?
+// console.log(typeof "Hello"); // Результат: String
+// console.log(typeof 42);    // Результат: Number
+// console.log(typeof true);  // Результат: Boolean
+// console.log(typeof "42");  // Результат: String
 
-// console.log(typeof [1, 2, 3]); // Результат: ?
-// console.log(typeof { name: "John", age: 30 }); // Результат: ?
-// console.log(typeof undefined); // Результат: ?
-// console.log(typeof "" ); // Результат: ?
+// const car = {
+//     color: "red",
+//     doors: 5
+// }
+// console.log(car.color);
+
+// const carArray = ["BMW", "Lexus"]
+// console.log(carArray[1]);
+
+// console.log(typeof [1, 2, 3]); // Результат: Object
+// console.log(typeof { name: "John", age: 30 }); // Результат: Object
+// console.log(typeof undefined); // Результат: Undefined
+// console.log(typeof ""); // Результат: String
+
+// let a;
+// let b = undefined;
+
+// console.log(a, b)
 
 // let variable;
-// console.log(typeof variable);  // Результат: ?
+// console.log(typeof variable);  // Результат: Undefined
 
 // let emptyValue = null;
-// console.log(typeof emptyValue);  // Результат: ?
+// console.log(typeof emptyValue);  // Результат: Object
 
-// console.log(typeof NaN); //  Результат: ?
+// console.log(typeof NaN); //  Результат: Number
 
 // let username;
-// console.log(typeof username); // Результат: ?
+// console.log(typeof username); // Результат: Undefined
 
 // let inputValue = null;
-// console.log(typeof inputValue); // Результат: ?
+// console.log(typeof inputValue); // Результат: Object
 
 // const quantity = 17;
-// console.log(typeof quantity); // Результат: ?
+// console.log(typeof quantity); // Результат: Number
 
 // const message = "JavaScript is awesome!";
-// console.log(typeof message); //  Результат: ?
+// console.log(typeof message); //  Результат: String
 
 // const isSidebarOpen = false;
-// console.log(typeof isSidebarOpen); //  Результат: ?
+// console.log(typeof isSidebarOpen); //  Результат: Boolean
 
 // А як нам дізнатися якого типу яка змінна? На допомогу приходить NaN
 
 // const validNumber = Number("51");
-// console.log(Number.isNaN(validNumber));  // Результат: ?
+// console.log(Number.isNaN(validNumber));  // Результат: false
 
 // const invalidNumber = Number("qweqwe");
-// console.log(Number.isNaN(invalidNumber));  // Результат: ?
+// console.log(Number.isNaN(invalidNumber));  // Результат: true
+
+// const invalidNumber = Number("52a13");
+// console.log(Number.isNaN(invalidNumber));  // Результат: true
 
 //--------------------------------------------------------------------------------------------------
 /**
@@ -75,21 +92,21 @@
 // Number(): Ця функція використовується для перетворення значень в числовий тип. Наприклад:
 
 // const str = "42";
-// console.log(str, typeof str)
+// console.log(str, typeof str); // Результат: 42, string
 // const num = Number(str);
-// console.log(num, typeof num);   // Результат: ?
+// console.log(num, typeof num);   // Результат: 42, number
 
 // let number = Number(undefined);
-// console.log(number, typeof number);  // Результат: ?
+// console.log(number, typeof number);  // Результат: NaN, number
 
 // let number = Number(null);
-// console.log(number, typeof number);  // Результат: ?
+// console.log(number, typeof number);  // Результат: 0, number
 
 /* null в JavaScript використовується для позначення відсутності значення.
 Коли функція Number отримує null як аргумент, вона перетворює його на число 0. */
 
 // let number = Number(true);
-// console.log(number, typeof number);  // Результат: ?
+// console.log(number, typeof number);  // Результат: 1, number
 
 /* В JavaScript значення true використовується для представлення логічної істини.
 Коли функція Number отримує true як аргумент, вона перетворює його на число 1. */
@@ -104,21 +121,21 @@
 //String(): Ця функція перетворює значення в рядковий тип даних. Наприклад:
 
 // const num = 42;
-// console.log(num, typeof num) //Результат: ?
+// console.log(num, typeof num); //Результат: 42, number
 
 // const str = String(num);
-// console.log(str, typeof str); // Результат: ?
+// console.log(str, typeof str); // Результат: "42", string
 
 // let text = String(undefined);
-// console.log(text, typeof text);  // Результат: ?
+// console.log(text, typeof text);  // Результат: "undefined", string
 
 // Коли функція String отримує undefined як аргумент, вона перетворює його на спеціальний рядок "undefined".
 
 // let text = String(null);
-// console.log(text, typeof text); // Результат: ?
+// console.log(text, typeof text); // Результат: "null", string
 
 // let text = String(false);
-// console.log(text, typeof text); // Результат: ?
+// console.log(text, typeof text); // Результат: "false", string
 
 //--------------------------------------------------------------------------------------------------
 /* Boolean(): Вона дозволяє перетворити значення в логічний тип (true або false)
@@ -126,25 +143,25 @@
 Ці значення: false, 0, "" (порожній рядок), null, undefined, NaN (Not a Number) */
 
 // const num = 42;
-// console.log(num, typeof num) // Результат: ?
+// console.log(num, typeof num) // Результат: 42, number
 
 // const bool = Boolean(num);
-// console.log(bool, typeof bool); // Результат: ?
+// console.log(bool, typeof bool); // Результат: true, boolean
 
 // let bool = Boolean('2');
-// console.log(bool, typeof  bool);  // Результат: ?
+// console.log(bool, typeof  bool);  // Результат: true, boolean
 
 // let bool = Boolean(undefined);
-// console.log(bool, typeof  bool);  // Результат: ?
+// console.log(bool, typeof  bool);  // Результат: false, boolean
 
 // let bool = Boolean(null);
-// console.log(bool, typeof  bool);  // Результат: ?
+// console.log(bool, typeof  bool);  // Результат: false, boolean
 
 // let bool = Boolean('');
-// console.log(bool, typeof  bool);  // Результат: ?
+// console.log(bool, typeof  bool);  // Результат: false, boolean
 
 // let bool = Boolean(-9);
-// console.log(bool, typeof  bool);  // Результат: ?
+// console.log(bool, typeof  bool);  // Результат: true, boolean
 
 // --- Неявне перетворення ---
 
@@ -154,39 +171,38 @@
 // const str = "Apple";
 // const result = num + str;
 
-// console.log(result)
-// console.log(typeof result); // Результат: ?
+// console.log(result, typeof result); // Результат: "42Apple", string
 
 // const num = 42;
 // const str = "2";
 // const result = num + str;
-// console.log(result, typeof result); // Результат: ?
+// console.log(result, typeof result); // Результат: "422", string
 
 // Рядок + Булеве значення:
 
 // const str = "true";
 // const bool = true;
-// const result = str + bool;  // Результат: ?
+// const result = str + bool;  // Результат: "truetrue", strng
 // console.log(result, typeof result);
 
-//Question 0. Який буде результат та тип данних цього результату?
-// console.log(3 + 4);
-// console.log('3 + 4');
-// console.log('3' + '4');
+// Question 0. Який буде результат та тип данних цього результату?
+// console.log(3 + 4); // 7
+// console.log('3 + 4'); // "3 + 4"
+// console.log('3' + '4'); // "34"
 
-//Question 1. Який буде результат та тип данних цього результату?
+// Question 1. Який буде результат та тип данних цього результату?
 // const num = 4;
 // const str = "Kovbasa";
 // const result = num + str + num;
-// console.log(result, typeof result);
+// console.log(result, typeof result); // "4Kovbasa4", string
 
-//Question 2. Який буде результат та тип данних цього результату?
+// Question 2. Який буде результат та тип данних цього результату?
 // const num = 5;
 // const str = "PlayStation";
 // const result = "Hello" + str + num;
-// console.log(result, typeof result);
+// console.log(result, typeof result); // "HelloPlayStation5", string
 
-//Question 3. Який буде результат та тип данних цього результату?
+// Question 3. Який буде результат та тип данних цього результату?
 // let drinkName = "Rom";
 // let count = (drinkName + 12).length;
 // console.log(count);
@@ -205,35 +221,37 @@
 // - Інкремент (++)
 // - Декремент (--)
 
-// console.log(4 + true);
-// console.log(false + true);
-// console.log("JS is cool: " + true);
+// console.log(4 + true);  // 5
+// console.log(false + true);  // 1
+// console.log("JS is cool: " + true); //"JS is cool: true"
 
-// console.log("Hello" - 5);
-// console.log("55" - 5);
-// console.log(5 - null);
+// console.log("Hello" - 5);   // NaN
+// console.log("55" - 5);  // 50
+// console.log(5 - null);  // 5
 
 // let n = 2;
-
 // n += 5;
-// console.log(n); // Результат: ?
+
+// console.log(n); // Результат: 7
 
 // n -= 2;
-// console.log(n); // Результат: ?
+// console.log(n); // Результат: 5
 
 // n *= 2;
-// console.log(n); // Результат: ?
+// console.log(n); // Результат: 10
 
 // n /= 2;
-// console.log(n); // Результат: ?
+// console.log(n); // Результат: 5
 
-// console.log(12 % 6); // Результат: ?
-// console.log(-6 % 2); // Результат: ?
+// console.log(12 % 6); // Результат: 0
+// console.log(-6 % 2); // Результат: -0
+
+// console.log(50 % 6); // Результат: 2
 
 // let counter = 2;
 // let counter1 = 2;
 
-// counter = counter +1;
+// counter = counter + 1;
 // console.log(counter);
 
 // counter1++;
@@ -252,11 +270,12 @@
 істинне, якщо всі операнди істинні. */
 
 // const age = 50;
-// console.log(age > 60 && age < 120); // true && false -> false
+// console.log(age > 60 && age < 120); // false && true -> false
 // console.log(age > 80 && age < 120); // false && true -> false
+// console.log(age < 60 && age < 120); // true && true -> true
 
-// console.log(1 && 5 && "" && false);
-// console.log("Mango" && "Polly");
+// console.log(1 && 5 && "" && false); // ""
+// console.log("Mango" && "Polly");    // "Polly"
 
 // Логічне «АБО»
 // <вираз> || <вираз>
@@ -266,7 +285,9 @@
 останнє "хибне" значення (falsy), якщо всі операнди хибні. */
 
 // const age = 5;
+
 // console.log(age < 10 || age > 30); // true || false -> true
+// console.log(age > 10 || age > 30); // false || false -> false
 
 // const age = 40;
 // console.log(age < 10 || age > 30); // false || true -> true
@@ -274,10 +295,10 @@
 // const age = 20;
 // console.log(age < 10 || age > 30); // false || false -> false
 
-// console.log( "" || false || 0 || null || undefined );
+// console.log("" || false || 0 || null || undefined); // false || false || false || false || false -> undefined
 
 // Логічне «НЕ»
-/*Оператор ! приводить операнд до значення типу Boolean, якщо необхідно, а потім - робить 
+/* Оператор ! приводить операнд до значення типу Boolean, якщо необхідно, а потім - робить 
 // інверсію - змінює його на протилежний true -> false або false -> true. */
 
 // console.log(!true);
@@ -289,7 +310,7 @@
 
 // const isOnline = true;
 // const isNotOnline = !isOnline;
-// console.log(isNotOnline, typeof isNotOnline)  // Результат: ?
+// console.log(isNotOnline, typeof isNotOnline)  // Результат: false, boolean
 
 // Рівність та нерівність
 // - Присвоєння (=)
@@ -299,13 +320,13 @@
 // - Строга нерівність (!==)
 
 // let num1 = 20;
-// let num2 = 30;
+// let num2 = "20";
 
-// console.log(num1 == num2); // Результат: ?
-// console.log(num1 === num2); // Результат: ?
+// console.log(num1 == num2); // Результат: true
+// console.log(num1 === num2); // Результат: false
 
-// console.log(num1 != num2); // Результат: ?
-// console.log(num1 !== num2); // Результат: ?
+// console.log(num1 != num2); // Результат: false
+// console.log(num1 !== num2); // Результат: true
 
 //--------------------------------------------------------------------------------------------------
 // --- Умовні конструкції ---
@@ -318,7 +339,6 @@
 // if (subscription === "pro") {
 //   cost = 100;
 // }
-
 // console.log(cost); // 100
 
 // IF...ELSE
@@ -356,7 +376,7 @@
 // ТЕРНАРНИЙ ОПЕРАТОР
 
 // let type;
-// const age = 20;
+// const age = 13;
 
 // if (age >= 18) {
 //   type = "adult";
@@ -377,24 +397,21 @@
 // let biggerNumber = num1 > num2 ? num1 : num2;
 // console.log(biggerNumber); // 10
 
-//SWITCH
+// SWITCH
 
 // let cost;
-// const subscription = "free";
+// const subscription = "premium";
 
 // switch (subscription) {
 //   case "free":
 //     cost = 0;
 //     break;
-
 //   case "pro":
 //     cost = 100;
 //     break;
-
 //   case "premium":
 //     cost = 500;
 //     break;
-
 //   default:
 //     console.log("Invalid subscription type");
 // }
@@ -404,7 +421,7 @@
 // let cost;
 // const subscription = "qwee";
 
-// if (subscription > "free") {
+// if (subscription == "free") {
 //   cost = 0;
 // } else if (subscription === "pro") {
 //   cost = 100;
@@ -463,14 +480,14 @@
 // }
 
 // TRY...CATCH...FANALLY
-// try {
-//   // Спробуємо виконати код, який може викликати помилку
-//   let result = 10 / 2; // Все ок
-//   console.log(result);
-// } catch (error) {
-//   // Якщо виникла помилка, обробляємо її тут
-//   console.log("Помилка:", error.message);
-// } finally {
-//   // Цей код виконується завжди, незалежно від того, чи була помилка
-//   console.log("Цей блок виконується завжди");
-// }
+try {
+  // Спробуємо виконати код, який може викликати помилку
+  let result = 0 / 0; // Все ок
+  console.log(result);
+} catch (error) {
+  // Якщо виникла помилка, обробляємо її тут
+  console.log("Помилка:", error.message);
+} finally {
+  // Цей код виконується завжди, незалежно від того, чи була помилка
+  console.log("Цей блок виконується завжди");
+}
