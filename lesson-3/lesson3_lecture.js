@@ -1,5 +1,3 @@
-//  !! постфіксний префіксний, порядок і або заперечення
-
 // 1. Чи буде вивенено "Привіт"?
 // if ("") {
 //   console.log("Привіт");
@@ -12,9 +10,9 @@
 // console.log(c);
 
 // 3. Який буде результат виразів?
-// console.log(5 > 4);
-// console.log("Ananas" > "Mango");  // 65 > 77
-// console.log("2" > "12");  // 50 > 49
+// console.log(5 > 4); // Результат: true
+// console.log("Ananas" > "Mango");  // 65 > 77 -> false
+// console.log("2" > "12");  // 50 > 49 -> true
 // console.log(undefined == null);
 // console.log(undefined === null);
 
@@ -26,14 +24,24 @@
 
 // 5. Які кінцеві значення всіх змінних q, r, w та d після виконання коду?
 // let q = 1;
-// let r = 1;
-// let w = ++q;
-// let d = r++;
-
 // console.log("q = " + q);
+
+// let r = 1;
 // console.log("r = " + r);
+
+// let w = ++q;
 // console.log("w = " + w);
+
+// let d = r++;
 // console.log("d = " + d);
+
+// console.log("q1 = " + q);
+// console.log("r1 = " + r);
+// console.log("w1 = " + w);
+// console.log("d1 = " + d);
+
+// d = r;
+// console.log("d2 = " + d);
 
 // Цікавий приклад використання префіксного та постфіксного інкремента
 
@@ -46,6 +54,25 @@
 
 // console.log(`a = ${a}`);
 // console.log(`b = ${b}`);
+
+// Оператор + перед операндом буде намагатись перетворити операнд в число
+
+// console.log(+undefined, typeof +undefined); // Результат: NaN number
+// console.log(+null, typeof +null); // Результат: 0 number
+// console.log(+"22", typeof +"22"); // Результат: 22 number
+
+// Оператор !! перед операндом буде перетворювати операнд в булеве значення і інвертувати його ??????
+// console.log(!!undefined, typeof !!undefined);  // Результат: false ????
+// console.log(!!"true", typeof !!true);  // Результат: ?
+// console.log(!!0, typeof !!0);  // Результат: ?
+
+// Важливо запам'ятати черговість виконання логічних операцій
+// Спочатку завжди виконується інверсія (!), якщо вона присутня
+// Наступною по приорітету йде операція логічного "I" (&&)
+// Наступною по приорітету йде операція логічного "АБО" (||)
+
+// console.log(false || false && true);  // Результат: ?
+// console.log(1 && true || 2);   // Результат: ?
 
 /* 
   Цикли 
@@ -80,7 +107,7 @@
 
 // let i = 0;
 // while (i < 10) {
-//   console.log(`i= ${i}`);
+//   console.log(`i = ${i}`);
 // }
 
 // може цикл і не початися
@@ -108,7 +135,7 @@
 
 // while (counter < 10) {
 //   console.log("counter: ", counter);
-//   counter += 1;
+//   counter += 1; // counter = couner + 1, counter++
 // }
 
 // Будемо заповнювати місця в готелі доти, доки поточна кількість клієнтів не буде дорівнювати максимально можливій.
@@ -116,7 +143,7 @@
 // let clientCounter = 18;
 // const maxClients = 25;
 
-// while (clientCounter  < maxClients) {
+// while (clientCounter  <= maxClients) {
 //   console.log(clientCounter);
 //   clientCounter += 1;
 // }
@@ -128,15 +155,13 @@
   З цього випливає, що тіло завжди виконується хоча б один раз.
 */
 
-/* 
-  do {
-    // statement
-  } while (condition);
-*/
+// do {
+//   // statement
+// } while (condition);
 
 // let i = 0;
 // do {
-//   i += 2;
+//   i += 2; // i = i + 2
 //   console.log("i = " + i);
 // } while (i < 5);
 
@@ -151,10 +176,10 @@
 // let password = "";
 
 // do {
-//   password = prompt("Введіть пароль довший 4-х символів", "");
+//   password = prompt("Введіть пароль довший 4-х символів");
 // } while (password.length < 5);
 
-// console.log("Ввели пароль: ", password);
+// alert(`Ввели пароль: ${password}`);
 
 //For
 
@@ -166,11 +191,9 @@
   необхідна кількість ітерацій і крок, з яким змінюється лічильник. 
 */
 
-/* 
-  for (initialization; condition; post-expression) {
-    // statements
-  }
-*/
+// for (initialization; condition; post-expression) {
+//   // statements
+// }
 
 // Приклад:
 
@@ -184,10 +207,11 @@
 // let sum = 0;
 
 // for (let i = 0; i <= target; i += 1) {
-//   sum += i;
+//   sum += i; // sum = sum + i
+//   console.log(sum);
 // }
 
-// console.log(sum);
+// console.log(`Final sum: ${sum}`);
 
 // Згадаємо про операцію a % b і виведемо остачу від ділення за допомогою циклу.
 
@@ -228,8 +252,12 @@
 //   if (i > 2) {
 //     console.log("Але першим знайшли число 2, break!");
 //     break;
+//     console.log("aaaa");
+//     break;
 //   }
 // }
+
+// console.log("Лог після циклу");
 
 /* 
   Оператор continue​
@@ -254,6 +282,7 @@
 //   if (i == 9) {
 //     console.log("А отут i = 9, пропускаємо");
 //     continue;
+//     console.log("jjj");
 //   }
 
 //   console.log("Непарне i: ", i); // Результат: ?
@@ -283,17 +312,17 @@
   які можна використовувати для змінення поведінки циклів.  
 */
 
-// outerLoop: for (let i = 0; i < 3; i++) {
-//   innerLoop: for (let j = 0; j < 3; j++) {
-//     if (i === 1 && j === 1) {
-//       continue innerLoop; // Пропустити поточну ітерацію innerLoop
-//     }
-//     if (i === 2 && j === 2) {
-//       break outerLoop; // Вийти з обох циклів
-//     }
-//     console.log(`i=${i}, j=${j}`);
-//   }
-// }
+outerLoop: for (let i = 0; i < 3; i++) {
+  innerLoop: for (let j = 0; j < 3; j++) {
+    if (i === 1 && j === 1) {
+      continue innerLoop; // Пропустити поточну ітерацію innerLoop'
+    }
+    if (i === 2 && j === 2) {
+      break outerLoop; // Вийти з обох циклів
+    }
+    console.log(`i=${i}, j=${j}`);
+  }
+}
 
 // ФУНКЦІЇ
 
@@ -305,11 +334,12 @@
 
 // Оголошення фунції
 
-// 1. Оголошення функції multiply
+// // 1. Оголошення функції multiply
 // function multiply() {
 //   // Тіло функції
 //   console.log("Це лог на момент виклику функції multiply");
 // }
+// console.log("Після оголошення multiply");
 
 // // 2. Виклики функції multiply
 // multiply(); // 'Це лог на момент виклику функції multiply'
@@ -330,7 +360,7 @@
 // // 2. Передача аргументів
 // multiply(2, 3, 5); // Результат множення дорівнює 30
 // multiply(4, 8, 12); // Результат множення дорівнює 384
-// multiply(17, 6, 25); // Результат множення дорівнює 2550 */
+// multiply(17, 6, 25); // Результат множення дорівнює 2550
 
 /* 
   Повернення значення
@@ -341,7 +371,6 @@
 
 // function multiply(x, y, z) {
 //   console.log("Код до return виконується звичайним чином");
-
 //   // Повертаємо результат виразу множення
 //   return x * y * z;
 
@@ -369,7 +398,8 @@
 //   }
 // }
 
-// checkAge();
+// let a = checkAge();
+// console.log(a);
 
 // Порядок виконання коду
 
@@ -441,7 +471,7 @@
 // Різниця в тому, що функціональний вираз не можна викликати до місця його створення,
 // тільки після нього, тому що це буквально оголошення const змінної.
 
-// Помилка! Не працює виклик до оголошення
+// //  Помилка! Не працює виклик до оголошення
 // multiply(1, 2, 3);
 
 // const multiply = function (x, y, z) {
@@ -465,28 +495,35 @@
 
 // Стрілкові фунуції
 
-// Звичайне оголошення функції
+// Звичайне оголошення функції (function declaration)
 // function classicAdd(a, b, c) {
 //   return a + b + c;
 // }
 
-// // Те саме стрілочною функцією
+// function expression
+// const functionExpression = function (a, b, c) {
+//   return a + b + c;
+// };
+
+// Те саме стрілочною функцією
 // const arrowAdd = (a, b, c) => {
 //   return a + b + c;
 // };
 
 // const classicAddResutl = classicAdd(1, 2, 3);
-// const arrowAdd = arrowAdd(1, 2, 3);
+// const functionExpressionResult = functionExpression(1, 2, 3);
+// const arrowAddResult = arrowAdd(1, 2, 3);
 
 // console.log(classicAddResutl);
-// console.log(arrowAdd);
+// console.log(functionExpressionResult);
+// console.log(arrowAddResult);
 
 // Якщо параметр один, його можна оголошувати без круглих дужок.
 // const add = a => {
 //   return a + 5;
 // };
 
-// console.log(add(a));
+// console.log(add(1));
 
 // Якщо параметри відсутні, то обов'язково повинні бути порожні круглі дужки.
 // const greet = () => {
@@ -511,8 +548,12 @@
 */
 
 // Колбек-функція
-// function greet(name) {
-//   console.log(`Ласкаво просимо ${name}.`);
+// function greet(n) {
+//   console.log(`Ласкаво просимо ${n}.`);
+// }
+
+// function byeBye(k) {
+//   console.log(`Допобачення, ${k}.`);
 // }
 
 // // Функція вищого порядку
@@ -522,6 +563,7 @@
 // }
 
 // registerGuest("Манго", greet);
+// registerGuest("Манго", byeBye);
 
 // Ми передали посилання на функцію greet як аргумент, тому вона буде присвоєна в параметр callback
 // і викликана всередині функції registerGuest за допомогою круглих дужок. Ім'я параметра для колбека
