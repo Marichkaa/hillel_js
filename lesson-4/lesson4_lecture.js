@@ -1,13 +1,13 @@
-//1. Яке останне значення буде виведено на екран? Чому?
+// 1. Яке останне значення буде виведено на екран? Чому?
 // let i = 7;
 
 // while (i) {
 //   console.log(--i);
 // }
 
-// console.log("Фінальне значееня: i = " + i);  // Результат: ?
+// console.log("Фінальне значееня: i = " + i);  // Результат: 0
 
-//2. Яке значення виведе цикл while?
+// 2. Яке значення виведе цикл while?
 // let q = 0;
 
 // while (q++ < 5) {
@@ -26,23 +26,27 @@
 
 // 3. Чи потрібен else?
 
-// function checkAge(age) { // Як називається цей спосіб оголошення функції?
-//   if (age) {
+// function checkAge(age) {
+//   // Як називається цей спосіб оголошення функції?
+//   if (age >= 21) {
 //     return true;
 //   } else {
 //     return console.log("Питай батьків");
 //   }
 // }
 
-// checkAge(10);
+// checkAge(21);
 
 // 4. Цей цикл безкінечний. Він ніколи не закінчується. Чому?
 
 // let j = 0;
 
 // while (j != 10) {
-//   j += 0.2;
+//   console.log(j += 0.2);
 // }
+
+// console.log(0.1 + 0.2);
+// console.log(0.2 + 0.2 + 0.2 + 0.2 + 0.2);
 
 // 5. Що буде виведено у консоль?
 
@@ -60,6 +64,8 @@
 //   console.log(a);
 // } while (a < 5);
 
+// console.log(`Після циклу: ${a}`);
+
 // 7. Що буде виведено у консоль?
 
 // let b = 10;
@@ -76,9 +82,9 @@
 //   console.log(num1 + num2);
 // };
 
-// sum(); // Результат: ?
-// sum(10); // Результат: ?
-// sum(10, 5); // Результат: ?
+// sum(); // Результат: NaN
+// sum(10); // Результат: 20
+// sum(10, 5); // Результат: 15
 
 //------------------------------------------
 
@@ -86,16 +92,16 @@
 
 /* ---- Методи примітивів! ----
 
-Примітивні типи даних — це типи, які є базовими і не можуть бути розбиті на складові. 
-Вони є найпростішими типами даних і зберігають значення без додаткових методів або властивостей. 
+    Примітивні типи даних — це типи, які є базовими і не можуть бути розбиті на складові. 
+    Вони є найпростішими типами даних і зберігають значення без додаткових методів або властивостей. 
 
-Number: Представляє числові значення (цілі числа і числа з плаваючою комою), наприклад, 42 або 3.14.
-String: Представляє рядки символів, наприклад, "Hello, world!".
-Boolean: Представляє логічні значення true або false.
-Undefined: Означає, що змінна була оголошена, але не має значення. 
-Null: Означає навмисну відсутність будь-якого об'єкта або значення.
-Symbol: Представляє унікальне і незмінне значення.
-BigInt: Представляє цілі числа довільної довжини. 
+    Number: Представляє числові значення (цілі числа і числа з плаваючою комою), наприклад, 42 або 3.14.
+    String: Представляє рядки символів, наприклад, "Hello, world!".
+    Boolean: Представляє логічні значення true або false.
+    Undefined: Означає, що змінна була оголошена, але не має значення. 
+    Null: Означає навмисну відсутність будь-якого об'єкта або значення.
+    Symbol: Представляє унікальне і незмінне значення.
+    BigInt: Представляє цілі числа довільної довжини. 
 */
 
 /* ---- Методи Number ----
@@ -122,17 +128,17 @@ BigInt: Представляє цілі числа довільної довжи
 // console.log(Number(valueB)); // NaN
 // console.log(typeof Number(valueB));  // "number"
 
-// console.log(Number.parseInt("5px")); // Результат: ?
-// console.log(Number.parseInt("12qwe74")); // Результат: ?
-// console.log(Number.parseInt("12.46qwe79")); // Результат: ?
-// console.log(Number.parseInt("qweqwe")); // Результат: ?
+// console.log(Number.parseInt("5px")); // Результат: 5
+// console.log(Number.parseInt("12qwe74")); // Результат: 12
+// console.log(Number.parseInt("12.46qwe79")); // Результат: 12
+// console.log(Number.parseInt("qweqwe")); // Результат: NaN
 
 // Метод Number.parseFloat() парсить з рядка дробове число.
 
-// console.log(Number.parseFloat("5px"));  // Результат: ?
-// console.log(Number.parseFloat("12qwe74"));  // Результат: ?
-// console.log(Number.parseFloat("12.46qwe79"));   // Результат: ?
-// console.log(Number.parseFloat("qweqwe"));   // Результат: ?
+// console.log(Number.parseFloat("5px"));  // Результат: 5
+// console.log(Number.parseFloat("12qwe74"));  // Результат: 12
+// console.log(Number.parseFloat("12.46qwe79"));   // Результат: 12.46
+// console.log(Number.parseFloat("qweqwe"));   // Результат: NaN
 
 /* --- Перевірка на число
     Є два схожі методи для перевірки операнда на число: 
@@ -145,13 +151,13 @@ BigInt: Представляє цілі числа довільної довжи
 
 // let a = 'qwerty' / 10;
 
-// console.log(isNaN(a)); // Результат: ?
-// console.log(isNaN(NaN)); // Результат: ?
-// console.log(isNaN(undefined)); // Результат: ?
-// console.log(isNaN(null)); // Результат: ?
-// console.log(isNaN(20)); // Результат: ?
-// console.log(isNaN("20")); // Результат: ?
-// console.log(isNaN("qwerty")); // Результат: ?
+// console.log(isNaN(a)); // Результат: true
+// console.log(isNaN(NaN)); // Результат: true
+// console.log(isNaN(undefined)); // Результат: true
+// console.log(isNaN(null)); // Результат: false
+// console.log(isNaN(20)); // Результат: false
+// console.log(isNaN("20")); // Результат: false
+// console.log(isNaN("qwerty")); // Результат: true
 
 /* 
     Number.isNaN(val) тільки перевіряє, чи значення val є NaN та НЕ намагається перевести val в число.
@@ -163,21 +169,21 @@ BigInt: Представляє цілі числа довільної довжи
 
 // let a = "qwerty" / 10;
 
-// console.log(Number.isNaN(a));
-// console.log(Number.isNaN(NaN));
-// console.log(Number.isNaN(undefined));
-// console.log(Number.isNaN(null));
-// console.log(Number.isNaN(20));
-// console.log(Number.isNaN("20"));
-// console.log(Number.isNaN("qwerty"));
+// console.log(Number.isNaN(a));    // Результат: true
+// console.log(Number.isNaN(NaN));  // Результат: true
+// console.log(Number.isNaN(undefined));    // Результат: false
+// console.log(Number.isNaN(null)); // Результат: false
+// console.log(Number.isNaN(20));   // Результат: false
+// console.log(Number.isNaN("20")); // Результат: false
+// console.log(Number.isNaN("qwerty")); // Результат: false
 
 // Приклад використання:
 
-// let yourAge = 'undefined';
+// let yourAge = null;
 // if (isNaN(yourAge)) {
-//     console.log("Age is invalid. Please enter a valid number.");
+//   console.log("Age is invalid. Please enter a valid number.");
 // } else {
-//     console.log(`Your age is ${yourAge}.`);
+//   console.log(`Your age is ${yourAge}.`);
 // }
 
 // let yourAge = '10';
@@ -190,41 +196,43 @@ BigInt: Представляє цілі числа довільної довжи
 // Number.isInteger - використовується для перевірки, чи є переданне значення цілим числом.
 // Метод НЕ буде намагатись перетворити операнд в ціле число
 
-// console.log(Number.isInteger(42)); // Результат: ?
-// console.log(Number.isInteger(42.12)); // Результат: ?
-// console.log(Number.isInteger("qwerty")); // Результат: ?
-// console.log(Number.isInteger(true)); // Результат: ?
-// console.log(Number.isInteger(NaN)); // Результат: ?
-// console.log(Number.isInteger(Infinity)); // Результат: ?
+// console.log(Number.isInteger(42)); // Результат: true
+// console.log(Number.isInteger(42.12)); // Результат: false
+// console.log(Number.isInteger("qwerty")); // Результат: false
+// console.log(Number.isInteger(true)); // Результат: false
+// console.log(Number.isInteger(NaN)); // Результат: false
+// console.log(Number.isInteger(Infinity)); // Результат: false
 
 // Number.isFinite - використовується для перевірки, чи є передене значення скінченим числом
 // Метод НЕ буде намагатись перетворити операнд в ціле число
 
-// console.log(Number.isFinite(5));
-// console.log(Number.isFinite(42.12));
-// console.log(Number.isFinite("5"));
-// console.log(Number.isFinite(true));
-// console.log(Number.isFinite(NaN));
-// console.log(Number.isFinite(Infinity));
+// console.log(Number.isFinite(5)); // Результат: true
+// console.log(Number.isFinite(42.12)); // Результат: true
+// console.log(Number.isFinite("5")); // Результат: false
+// console.log(Number.isFinite(true)); // Результат: false
+// console.log(Number.isFinite(NaN)); // Результат: false
+// console.log(Number.isFinite(Infinity)); // Результат: false
 
 // value.toFixed() - скорочення до певного знаку після коми.
-// Важливо пам'ятати, що value.toFixed() не буде округляти value в результаті скорочення
+// Важливо пам'ятати, що value.toFixed() БУДЕ округляти value в результаті скорочення
 
-// let n = 12.44444322;
-// let str = n.toFixed(1);
+// let n = 12.4544322;
+// let str = n.toFixed(4);
 // console.log(str);
 
 // console.log(0.17 + 0.24); // 0.41000000000000003
-// console.log((0.17 + 0.24).toFixed(2)); // Результат: ?
+// console.log((0.17 + 0.24).toFixed(2)); // Результат: 0.41
 
-// value.toPrecision() - метод встановлює загальну кількість символів у числі, включаючи цілу частину, та знаки після коми.
-// А от value.toPrecision() - буде округляти значення.
+// value.toPrecision() - метод встановлює загальну кількість цифр у числі, включаючи цілу частину, та знаки після коми.
+// ????? А от value.toPrecision() - буде округляти значення.
 
 // let num = 123.34356546;
 // let formattedNum = num.toPrecision(6);
 
+// console.log(12345..toPrecision(4)) // Поверне число в шіснадцятковій системі числення
+
 // console.log(num);
-// console.log(formattedNum); // Результат: ?
+// console.log(formattedNum); // Результат: 123.344
 
 //----------------------------------------------------------------------------
 
@@ -254,7 +262,7 @@ BigInt: Представляє цілі числа довільної довжи
 // console.log(Math.min(20, 10, 50, 40)); // 10
 
 // Math.pow(base, exponent) - піднесення до степеня
-// console.log(Math.pow(2, 4));    // Результат: ?
+// console.log(Math.pow(2, 4));    // Результат: 16
 
 // Math.random() - повертає псевдовипадкове число в діапазоні [0, 1), тобто, від 0 включно до 1 не включно
 
@@ -266,12 +274,15 @@ BigInt: Представляє цілі числа довільної довжи
 // Ми можемо перетворити повернене число на Integer
 
 // let rnd = Math.random();
-// console.log(rnd);
+// // console.log(rnd);
 
 // rnd *= 10;
-// console.log(rnd);
+// // console.log(rnd);
 
 // rnd = Math.round(rnd);
+// console.log(rnd);
+
+// let rnd = Math.round(Math.random() * 100)
 // console.log(rnd);
 
 // Створення випадкового числа з плаваючою крапкою від min до max (не враховуючи max)
@@ -303,7 +314,7 @@ BigInt: Представляє цілі числа довільної довжи
 
 // console.log("Мій улюблений фільм - \"Тітанік\"");
 
-//Лапки  - це далеко не єдиний випадок, коли може знадобитись екранування:
+// Лапки  - це далеко не єдиний випадок, коли може знадобитись екранування:
 
 // Рядок з одинарними лапками та зворотним слешем
 // let singleQuoted = 'It\'s a beautiful day!';
@@ -318,21 +329,21 @@ BigInt: Представляє цілі числа довільної довжи
 // console.log(multiLine);
 
 // Рядок зі зворотними слешами
-// let path = "C:\\Program Files\\MyApp";
+// let path = "C:\\ProgramFiles\\MyApp";
 // console.log(path);
 
 // lenght - вказує на кількість символів
 // const myString = "Hello";
-// console.log(myString.length); // Результат: ?
+// console.log(myString.length); // Результат: 5
 
 // charAt - дозволяє отримати символ за певним індексом у рядку
 // Якщо символу з таким індексом немає, він повертає "" - пусту строку
 // const str = "Hello, World!";
 
-// console.log(str.charAt(0)); // Результат: ?
-// console.log(str.charAt(6)); // Результат: ?
-// console.log(str.charAt(7)); // Результат: ?
-// console.log(str.charAt(13)); // Результат: ?
+// console.log(str.charAt(0)); // Результат: H
+// console.log(str.charAt(6)); // Результат: " " - пробіл
+// console.log(str.charAt(7)); // Результат: W
+// console.log(str.charAt(13)); // Результат: "" - пуста строка
 
 // Наразі є новий стандарт для отримання символу за індексом в рядку,
 // який отримує доступ через індекс у масиві
@@ -340,10 +351,10 @@ BigInt: Представляє цілі числа довільної довжи
 
 // const str = "Hello, World!";
 
-// console.log(str[0]); // Результат: ?
-// console.log(str[3]); // Результат: ?
-// console.log(str[5]); // Результат: ?
-// console.log(str[13]); // Результат: ?
+// console.log(str[0]); // Результат: H
+// console.log(str[3]); // Результат: друга l
+// console.log(str[5]); // Результат: ,
+// console.log(str[13]); // Результат: undefined
 
 // repeat - дозволяє повторити вміст рядка декілька разів і стоворити новий рядок
 
@@ -357,44 +368,50 @@ BigInt: Представляє цілі числа довільної довжи
 // console.log(str.concat("Pro!"));
 // console.log(str.concat("Pro!", " in Hillel! ")); // Результат: "QA Pro! in Hillel! "
 
-// endWith - використовується для перевірки, чи закінчується рядок заданим підрядком
+// endsWith - використовується для перевірки, чи закінчується рядок заданим підрядком
 // чутливий до регістру
 
 // const str = "script.js";
 
 // console.log(str.endsWith("js")); // Результат: true
-// console.log(str.endsWith("Js")); // Результат: ?
-// console.log(str.endsWith("script")); // Результат: ?
+// console.log(str.endsWith("Js")); // Результат: false
+// console.log(str.endsWith("script")); // Результат: false
 
-// includes - метод перевіряє, чи містить рядок певну підрядок, і повертає true або false.
+// includes - метод перевіряє, чи містить рядок певний підрядок, і повертає true або false.
 // чутливий до регістру
 
 // let phrase = "Hello, world!";
-// console.log(phrase.includes("world"));   // Результат: ?
-// console.log(phrase.includes("llo, w"));  // Результат: ?
-// console.log(phrase.includes("World"));   // Результат: ?
-// console.log(phrase.includes("foo")); // Результат: ?
+
+// console.log(phrase.includes("world"));   // Результат: true
+// console.log(phrase.includes("llo, w"));  // Результат: true
+// console.log(phrase.includes("World"));   // Результат: false
+// console.log(phrase.includes("foo")); // Результат: false
 
 // startsWith  - метод перевіряє, чи починається рядок з певної підрядка.
 // чутливий до регістру
 
 // let text = "JavaScript is fun";
-// console.log(text.startsWith("JavaScript")); // Результат: ?
-// console.log(text.startsWith("javascript")); // Результат: ?
-// console.log(text.startsWith("fun"));    // Результат: ?
+
+// console.log(text.startsWith("JavaScript")); // Результат: true
+// console.log(text.startsWith("javascript")); // Результат: false
+// console.log(text.startsWith("fun")); // Результат: false
 
 // indexOf / lastIndexOf
 /*
+
     indexOf(): Повертає перше входження підрядка в рядок або -1, якщо підрядок не знайдено.
     lastIndexOf(): Повертає останнє входження підрядка в рядок або -1, якщо підрядок не знайдено.
+
+    Входження - це співпадіння підстоки в строці. Перше входження - це перше співпадіння, і повертатиметься індекс
+    першого символу у співпадінні.
 */
 
-// let sentence = "Find the location of the word 'the' in this sentence.";
+let sentence = "Find the location of the word 'the' in this sentence.";
 
-// console.log(sentence.indexOf("the")); // Результат: ? (перше входження)
-// console.log(sentence.lastIndexOf("the")); // Результат: ? (останнє входження)
-// console.log(sentence.indexOf("word")); // Результат: ?
-// console.log(sentence.indexOf("missing")); // Результат: ?
+// console.log(sentence.indexOf("the")); // Результат: 5 (перше входження)
+// console.log(sentence.lastIndexOf("the")); // Результат: 31 (останнє входження)
+// console.log(sentence.indexOf("word")); // Результат: 25
+// console.log(sentence.indexOf("missing")); // Результат: -1
 
 // padStart/padEnd
 /*  
@@ -407,13 +424,13 @@ BigInt: Представляє цілі числа довільної довжи
 // let number = "5";
 
 // console.log(number.padStart(3));    // Результат: "  5"
-// console.log(number.padEnd(3));  // Результат: ?
+// console.log(number.padEnd(3));  // Результат: "5  "
 
-// console.log(number.padStart(3, "0"));   // Результат: ?
-// console.log(number.padEnd(3, "0")); // Результат: ?
+// console.log(number.padStart(3, "0"));   // Результат: "005"
+// console.log(number.padEnd(3, "0")); // Результат: "500"
 
-// console.log(number.padStart(3, "qsa")); // Результат: ?
-// console.log(number.padEnd(3, "*")); // Результат: ?
+// console.log(number.padStart(3, "qsa")); // Результат: "qs5"
+// console.log(number.padEnd(3, "*")); // Результат: 5**
 
 // trim, trimStart, trimEnd
 /* 
@@ -424,9 +441,9 @@ BigInt: Представляє цілі числа довільної довжи
 
 // let str = "   Hello, world!   ";
 
-// console.log(str.trim()); // Результат: ?
-// console.log(str.trimStart()); // Результат: ?
-// console.log(str.trimEnd()); // Результат: ?
+// console.log(str.trim()); // Результат: "Hello, world!"
+// console.log(str.trimStart()); // Результат: "Hello, world!   "
+// console.log(str.trimEnd()); // Результат: "   Hello, world!"
 
 // replace
 /* 
@@ -436,7 +453,7 @@ BigInt: Представляє цілі числа довільної довжи
 // let greeting = "Hello, John!";
 // let newGreeting = greeting.replace("John", "Jane");
 
-// console.log(newGreeting); // Результат: ?
+// console.log(newGreeting); // Результат: "Hello, Jane!"
 
 // substring/ substr/ slice
 /*  
@@ -447,20 +464,20 @@ BigInt: Представляє цілі числа довільної довжи
 
 // let text = "JavaScript";
 
-// console.log(text.substring(0, 4));  // Результат: ?
-// console.log(text.substr(4, 6)); // Результат: ?
-// console.log(text.slice(4)); // Результат: ?
-// console.log(text.slice(-6));    // Результат: ?
-// console.log(text.slice(-5, -1));    // Результат: ?
+// console.log(text.substring(0, 4));  // Результат: "Java"
+// console.log(text.substr(4, 6)); // Результат: "Script"
+// console.log(text.slice(4)); // Результат: "Script"
+// console.log(text.slice(-6));    // Результат: "Script"
+// console.log(text.slice(-5, -1));    // Результат: "crip"
 
-// toUpperCase / toLowCase
+// toUpperCase / toLowerCase
 
 // let greeting = "Hello, World!";
 // let upperCaseGreeting = greeting.toUpperCase();
 
-// console.log(upperCaseGreeting); // Результат: ?
+// console.log(upperCaseGreeting); // Результат: "HELLO, WORLD!"
 
 // let greeting = "Hello, World!";
 // let lowerCaseGreeting = greeting.toLowerCase();
 
-// console.log(lowerCaseGreeting); // Результат: ?
+// console.log(lowerCaseGreeting); // Результат: "hello, world!"
