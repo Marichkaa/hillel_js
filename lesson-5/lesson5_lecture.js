@@ -1,7 +1,6 @@
 // Навіщо нам return?
-
 // function sum() {
-//   5 + 5;
+//   return 5 + 5;
 // }
 
 // console.log(sum());
@@ -31,6 +30,7 @@
 // }
 
 // console.log(sum());
+
 // Чому не працює?
 
 // function sum() {
@@ -51,43 +51,44 @@
 // }
 
 // console.log(sum());
+
 // Перетворіть рядок на число
 
 // let str = "123";
 
-// let str1 = ?(str);
+// let str1 = Number(str);
 // console.log(str1, typeof str1)
 
-// let str2 = Number.?(str);
+// let str2 = Number.parseInt(str);
 // console.log(str2, typeof str2)
 
 // Перевірити, чи є значення NaN
-// console.log(Number.?(str));
-// console.log(Number.?(str1));
-// console.log(Number.?(str2));
+// console.log(Number.isNaN(str));
+// console.log(Number.isNaN(str1));
+// console.log(Number.isNaN(str2));
 
 // Округлити число 3.14 до цілого числа
-// console.log(?(3.14));
+// console.log(Math.round(3.14));
 
 // Знайти максимальне значення з двох чисел
-// console.log(?(3,21));
+// console.log(Math.max(3,21));
 
 // Перетворення рядка "123.45" на число з 2 десятковими знаками.
-// console.log(?("123.45"));
+// console.log(Number.parseFloat("123.45"));
 
 // Перетворити число на рядок
 // num = 123;
-// console.log(?(num), typeof ?(num));
+// console.log(String(num), typeof String(num));
 
 // Переведення рядка у верхній регістр
 // str = "Привіт";
-// console.log(str.?());
+// console.log(str.toUpperCase());
 
 // Знаходження першого входження символу "о" у рядку "hohohoho"
-// console.log("hohohoho".?("o"));
+// console.log("hohohoho".indexOf("o"));
 
 // Видалення пробілів з обох кінців рядка "  Привіт  "
-// console.log("  Привіт  ".?())
+// console.log("  Привіт  ".trim())
 
 // --------------------------------------------------------------
 
@@ -112,6 +113,12 @@
       }
 */
 
+// const book1 = {};
+
+// book1.title = "blabla";
+
+// console.log(book1);
+
 // const book = {
 //   title: "The Last Kingdom",
 //   author: "Bernard Cornwell",
@@ -126,7 +133,7 @@
 
 // const book = new Object(); // Створюємо порожній об'єкт
 
-// Присвоюємо об'єкту властивості
+// // Присвоюємо об'єкту властивості
 // book.title = "The Last Kingdom";
 // book.author = "Bernard Cornwell";
 // book.genres = ["historical prose", "adventure"];
@@ -164,7 +171,7 @@
 // Створення порожнього об'єкта
 // const book = {};
 
-// Додавання властивостей до об'єкта
+// // Додавання властивостей до об'єкта
 // book.title = "The Last Kingdom"; // Додаємо властивість title
 // book.author = "Bernard Cornwell"; // Додаємо властивість author
 // book.genres = ["historical prose", "adventure"]; // Додаємо властивість genres
@@ -188,14 +195,14 @@
 //   rating: 8.38,
 // };
 
-// Доступ до властивостей об'єкта через крапку
+// // Доступ до властивостей об'єкта через крапку
 // console.log(book);
 // console.log(book.title);
 // console.log(book.author);
 // console.log(book.rating);
 
-// звернутися до властивості якої немає
-// console.log(book.absentProperty)
+// // звернутися до властивості якої немає
+// console.log(book.absentProperty);
 
 // --- Доступ через квадратні дужки: Необхідний, коли назва властивості динамічна,
 // зберігається у змінній, містить пробіли або інші символи, які не підходять для доступу через крапку.
@@ -206,7 +213,7 @@
 //   rating: 8.38,
 // };
 
-// Доступ до властивостей об'єкта через квадратні дужки
+// // Доступ до властивостей об'єкта через квадратні дужки
 // console.log(book["title"]);
 // console.log(book["author"]);
 // console.log(book["rating"]);
@@ -218,7 +225,7 @@
 //   rating: 8.38,
 // };
 
-// const propertyName = "author";
+// let propertyName = "author";
 // console.log(book[propertyName]);
 
 /* 
@@ -239,7 +246,7 @@
 
 // console.log(user);
 
-// Перезапис властивостей
+// // Перезапис властивостей
 // user.name = "Jane";
 // user.age = 25;
 // user.isActive = false;
@@ -266,9 +273,9 @@
 // book.originalLanguage = "en";
 // book["translations"] = ["ua", "ru"];
 
-// console.log(book.pageCount); // Результат: ?
-// console.log(book.originalLanguage); // Результат: ?
-// console.log(book.translations); // Результат: ?
+// console.log(book.pageCount); // Результат: 836
+// console.log(book.originalLanguage); // Результат: en
+// console.log(book.translations); // Результат: [ 'ua', 'ru' ]
 
 /* 
   --- Видалення властивостей
@@ -284,10 +291,10 @@
 
 // console.log(user);
 
-// Видалення властивості
+// // Видалення властивості
 // delete user.age;
 
-// console.log(user); // Результат: ?
+// console.log(user); // Результат: { name: 'Alice', isAdmin: true }
 
 /* 
   --- Обчислювальні значення
@@ -312,7 +319,7 @@
 //   [propName]: "Генрі Сибола",
 // };
 
-// console.log(user.name); // 'Генрі Сибола'
+// console.log(user["name"]); // 'Генрі Сибола'
 
 /* 
   --- Об'єкт в об'єкті
@@ -334,7 +341,7 @@
 //   },
 // };
 
-// console.log(user.location.city);
+// console.log(user.stats.views);
 
 /* 
   --- Методи
@@ -370,25 +377,26 @@
 //   author: "George Orwell",
 // };
 
-// Створення нового об'єкта з прототипом book
+// // Створення нового об'єкта з прототипом book
 // const newBook = Object.create(book);
 
-// Додавання нової властивості до об'єкта newBook
+// // Додавання нової властивості до об'єкта newBook
 // newBook.year = 1949;
 
-// Виклик властивостей з прототипу та нової властивості
+// // Виклик властивостей з прототипу та нової властивості
+// console.log(newBook);   // Результат: { year: 1949 }
 // console.log(newBook.title); // Результат: "1984" (успадкована властивість)
 // console.log(newBook.author); // Результат: "George Orwell" (успадкована властивість)
 // console.log(newBook.year); // Результат: 1949 (власна властивість)
 
 // --- Object.hasOwnProperty(propertyName)
 
-// Базовий об'єкт з властивістю 'name'
+// // Базовий об'єкт з властивістю 'name'
 // const person = {
 //   name: "Alice",
 // };
 
-// Створюємо новий об'єкт з прототипом person
+// // Створюємо новий об'єкт з прототипом person
 // const newPerson = Object.create(person);
 // newPerson.age = 30;
 
@@ -421,7 +429,9 @@
 //   },
 // };
 
-// Виклики методів
+// console.log(bookShelf)
+
+// // Виклики методів
 // bookShelf.getBooks();
 // bookShelf.addBook("Нова книга");
 
@@ -488,14 +498,14 @@
 //   },
 // };
 
-// console.log(bookShelf.getBooks()); // Результат: ?
+// console.log(bookShelf.getBooks()); // Результат: [ 'The Last Kingdom' ]
 
 // bookShelf.addBook("The Mist");
 // bookShelf.addBook("Dream Guardian");
-// console.log(bookShelf.getBooks()); // Результат: ?
+// console.log(bookShelf.getBooks()); // Результат: [ 'The Last Kingdom', 'The Mist', 'Dream Guardian' ]
 
 // bookShelf.removeBook("The Mist");
-// console.log(bookShelf.getBooks()); // Результат: ?
+// console.log(bookShelf.getBooks()); // Результат: [ 'The Last Kingdom', 'Dream Guardian' ]
 
 /* 
   --- Pозпаковування властивостей об'єкта (деструктуризація об'єктів)
@@ -539,11 +549,11 @@
 //   price: 1200,
 // };
 
-// // Перейменування властивостей
+// Перейменування властивостей
 // const { title: productName, price: productPrice } = product;
 
-// console.log(productName); // Результат: ?
-// console.log(productPrice); // Результат: ?
+// console.log(productName); // Результат: "Laptop"
+// console.log(productPrice); // Результат: 1200
 
 /*   
   2. Деструктуризація з значеннями за замовчуванням:
@@ -605,11 +615,9 @@
 // let user = {
 //   name: "John",
 //   surname: "Snow",
-
 //   get fullName() {
 //     return `${this.name} ${this.surname}`;
 //   },
-
 //   set fullName(value) {
 //     [this.name, this.surname] = value.split(" ");
 //   },
@@ -648,7 +656,7 @@
 //   unsubscribeDate: undefined,
 // };
 
-// if (user.login) {
+// if (user.unsubscribeDate) {
 //   console.log("Властивість user.login існує");
 // } else {
 //   console.log("Властивість user.login не знайдено");
@@ -673,9 +681,11 @@
   включаючи ті, що знаходяться в ланцюгу прототипів).
 */
 
-// for (let key in object) {
-//   // Виконати код для кожної властивості
-// }
+/* 
+  for (let key in object) {
+    // Виконати код для кожної властивості
+  }
+*/
 
 // const person = {
 //   firstName: "John",
@@ -686,6 +696,7 @@
 // for (let key in person) {
 //   console.log(key); // Виведе: firstName, lastName, age
 //   console.log(person[key]); // Виведе: John, Doe, 30
+//   console.log("-----------------");
 // }
 
 /* 
