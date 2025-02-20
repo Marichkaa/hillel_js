@@ -24,36 +24,47 @@
 
 // // Що буде виведене у консоль?
 // const list = [1 + 2, 1 * 2, 1 / 2];
-// console.log(list); // Результат: ?
+// console.log(list); // Результат: [ 3, 2, 0.5 ]
 
 // // Що буде виведене у консоль?
 // const arr = [1, 2, 3];
-// array.reverse();
-// console.log(arr); // Результат: ?
+// arr.reverse();
+// console.log(arr); // Результат: [ 3, 2, 1 ]
 
 // // Що буде виведене у консоль?
 // const array = [3, 4];
 // array.unshift(2);
 // array.unshift(0, 1);
 // array.unshift([-1]);
-// console.log(array); // Результат: ?
+
+// console.log(array); // Результат: [ [ -1 ], 0, 1, 2, 3, 4 ]
 
 // // Що буде виведене у консоль?
 // const words = ["a", "b", "c"];
 // const result = words.concat(1, [2, [3]]);
-// console.log(result); // Результат: ?
+// console.log(result); // Результат: [ 'a', 'b', 'c', 1, 2, [ 3 ] ]
+
+// const result1 = result.flat(3);
+// console.log(result1); // Результат: [ 'a', 'b', 'c', 1, 2, 3 ]
 
 // // Що буде виведене у консоль?
 // const x = [1, 2, 3];
 // x[-1] = 4;
 
-// console.log(x.length); // Результат: ?
-// console.log(x); // Результат: ?
-// console.log(x[-1]); // Результат: ?
+// console.log(x.length); // Результат: 3
+// console.log(x); // Результат: [ 1, 2, 3, '-1': 4 ]
+// console.log(x[-1]); // Результат: 4
 
-// // Що буде виведене у консоль?
-// const y = [1, 5, 10, 15];
-// console.log(y.fill(0, 2, 5)); // Результат: ?
+// Що буде виведене у консоль?
+const y = [1, 5, 10, 15];
+console.log(y.fill(0, 2, 5)); // Результат: [ 1, 5, 0, 0 ]
+
+/*
+ --- array.fill(value, start, end)
+
+ - value - значення, яким потрібно заповнити масив
+ - start (необов'язковий) - початковий індекс (за замовчуванням - 0)
+ - end (необов'язковий) - кінцевий індекс (за замовчуванням - до кінця масиву)
 
 /* 
     ---- РЕГУЛЯРНІ ВИРАЗИ
@@ -109,6 +120,7 @@
 */
 
 /* 
+
 . — крапка. Збігається з будь-яким одним символом, окрім символу нового рядка (\n).
 
 * — зірочка. Збігається з нульовою або більшою кількістю попереднього символа або групи.
@@ -162,7 +174,7 @@ $ — долар. Позначає кінець рядка.
 
 // console.log(pattern.test(str)); // Результат: true
 
-// Але не все так просто!
+// // Але не все так просто!
 // let names = "txt file.txt log.txt file.png ltxt.doc one_txt.jpg";
 // let pattern = /.txt/g;
 // let matches = names.match(pattern);
@@ -174,31 +186,31 @@ $ — долар. Позначає кінець рядка.
 // let pattern = /.ar/g;
 // const matches = sentence.match(pattern);
 
-// console.log(matches);   // Результат: ?
+// console.log(matches);   // Результат: [ 'car', 'par', 'gar' ]
 
 // // Бо крапка заміняє будь-який символ!
 // const names = "Аня Ася Оля Аля Валя";
 // const pattern = /А.я/g;
 // const matches = names.match(pattern);
 
-// console.log(matches); // Результат: ?
+// console.log(matches); // Результат: [ 'Аня', 'Ася', 'Аля' ]
 
 // // Щоб використовувати спеціальні символ як звичайний, додайте до нього зворотній слеш: \.
-// let names = "file.txt log.txt file.png ltxt.doc one_txt.jpg";
+// let names = "file.txt log.txt file.png ltxt.doc one_txt.jpg .txt_am";
 // let pattern = /\.txt/g;
 // let matches = names.match(pattern);
 
-// console.log(matches); // Результат: ?
+// console.log(matches); // Результат: [ '.txt', '.txt', '.txt' ]
 
 // // Ще приклад
 // let str = "ivaniv_ruslan@yahoo.com";
 // const pattern = /.com/;
 
-// console.log(str + " - " + pattern.test(str)); // Результат: ?
+// console.log(str + " - " + pattern.test(str)); // Результат: true
 
 // str = "ivanov_commer@gmail";
 // const pattern = /.com/;
-// console.log(str + " - " + pattern.test(str)); // Результат: ?
+// console.log(str + " - " + pattern.test(str)); // Результат: true
 
 // // Ще раз, крапка значить будь-який символ !!!
 // const str1 = "vasja@yahoo.com";
@@ -213,11 +225,13 @@ $ — долар. Позначає кінець рядка.
 // // пошук '/'
 // const str1 = "Строка з /";
 // const pattern = /\//;
+
 // console.log(str1 + ": " + pattern.test(str1));
 
 // // пошук '\' один слеш чи два?
 // const str1 = "Строка з \\";
 // const pattern = /.\\/;
+
 // console.log(str1 + ": " + pattern.test(str1));
 
 // // Давайте розберемо такий приклад:
@@ -238,7 +252,7 @@ $ — долар. Позначає кінець рядка.
 /* 
     ---- Інтервал символів 
 
-    Інтервал або набір символів також називають символьним класомю
+    Інтервал або набір символів також називають символьним класом.
     Для його позначення використовуються квадратні дужки.
 
     Щоб вказати діапазон символів у середені класу, необхідно поставити знак тире.
@@ -249,36 +263,38 @@ $ — долар. Позначає кінець рядка.
 // const pattern = /[Tt]he/g;
 
 // const matches = sentance.match(pattern);
-// console.log(matches); // Результат: ?
+// console.log(matches); // Результат: [ 'The', 'the' ]
 
 // // Варто зазначити, що крапка, поміщена у квадратні дужки, означає саме крапку, і ніщо інше.
 // const sentance = "A gdtdge is a good place to park a car.";
 // const pattern = /ar[.]/g;
 
 // const matches = sentance.match(pattern);
-// console.log(matches); // Результат: ?
+// console.log(matches); // Результат: [ 'ar.' ]
 
 // // А якщо нам потрібно знайти Аллу чи Анну?
 // const names = "Анна Алла авіпавпа Аркан А@#$а Абба";
 // const pattern = /А..а/g;
 
 // const matches = names.match(pattern);
-// console.log(matches);
+// console.log(matches);  // Результат: [ 'Анна', 'Алла', 'Арка', 'Абба' ]
 
 // // Нам тоді потрібно використовувати пошук за різними значеннями
 // const names = "Анна Алла авіпавпа Аркан А@#$а Абба Ална Анла";
 // const pattern = /А[нл][нл]а/g;
 // const matches = names.match(pattern);
-// console.log(matches);
+// console.log(matches); // Результат: [ 'Анна', 'Алла', 'Ална', 'Анла' ]
 
 // // Ще приклад:
 // const str = "vasja@gmail.com";
 // const pattern = /[bcdi]/;
-// console.log("Чи є тут співпадіння? " + pattern.test(str));
-// console.log("На якій позиції? " + str.search(pattern));
+
+// console.log("Чи є тут співпадіння? " + pattern.test(str));  // Результат: true
+// console.log("На якій позиції? " + str.search(pattern)); // Результат: 9
 
 /* 
     ---- Класси символів 
+
     Класи символів у регулярних виразах дозволяють нам визначити групи символів, 
     які ви шукаєте у тексті.
     Вони представлені в квадратних дужках [...] і дозволяють вам вказати, які 
@@ -307,49 +323,49 @@ $ — долар. Позначає кінець рядка.
 // const pattern = /[a-z]+/g;
 // const matches = text.match(pattern);
 
-// console.log(matches);
+// console.log(matches); // Результат: [ 'apple', 'anana', 'cherry' ]
 
 // // Клас [A-Z]
 // const text = "apple Banana cherry";
 // const pattern = /[A-Z]+/g;
 // const matches = text.match(pattern);
 
-// console.log(matches);
+// console.log(matches); // Результат: [ 'B' ]
 
 // // Клас[0 - 9];
 // const text = "12345 apples, 6789 bananas";
 // const pattern = /[0-9]+/g;
 // const matches = text.match(pattern);
 
-// console.log(matches);
+// console.log(matches); // Результат: [ '12345', '6789' ]
 
 // // Клас [a-zA-Z0-9_]
 // const text = "Hello123 World_456";
-// const pattern = /[a-zA-Z0-9]+/g;
+// const pattern = /[a-zA-Z0-9_]+/g;
 // const matches = text.match(pattern);
 
-// console.log(matches);
+// console.log(matches); // Результат: [ 'Hello123', 'World_456' ]
 
 // // Ще приклад
 // const names = "Аня, Ася, Оля, Аля, Валя, Александрія";
 // const pattern = /А[а-я]я/g;
 // const matches = names.match(pattern);
 
-// console.log(matches);
+// console.log(matches); // Результат: [ 'Аня', 'Ася', 'Аля' ]
 
 // const str = "Сьогодні 4 день тижня";
 // const pattern = /[1-7asd] день тижня/g;
 
-// console.log("Чи є співпадіння? " + pattern.test(str));
-// console.log("на якій позиції? " + str.search(pattern));
+// console.log("Чи є співпадіння? " + pattern.test(str)); // Результат: true
+// console.log("на якій позиції? " + str.search(pattern)); // Результат: 9
 
-// // Діапазон "крім"
+// Діапазон "крім"
 // // Приклад 0
 // const text = "The car parked in the garage";
 // const pattern = /[^c]ar/g;
 // const matches = text.match(pattern);
 
-// console.log(matches);    // Результат: [ 'par', 'gar' ]
+// console.log(matches); // Результат: [ 'par', 'gar' ]
 
 // // Приклад 1
 // const text = "apple banana chery";
@@ -372,27 +388,28 @@ $ — долар. Позначає кінець рядка.
 // console.log(pattern.test(str)); // Результат: false
 // console.log(str.search(pattern)); // Результат: -1
 
-// // Приклад 3
+// Приклад 3
 // const str = "Приклад в якому немає англійських букв і цифр";
 // const pattern = /[^а-я]/; // Чи є в нас великі літери?
 
-// console.log("Перша спроба: " + pattern.test(str));  // Результат: true
+// console.log("Перша спроба: " + pattern.test(str)); // Результат: true
 // console.log(str.search(pattern)); // Результат: 0
 
 // const str = "приклад";
 // const pattern = /[^а-я]/; //Чи є в нас великі літери?
 
-// console.log("Друга спроба: " + pattern.test(str)); // Результат: ?
-// console.log(str.search(pattern)); // Результат: ?
+// console.log("Друга спроба: " + pattern.test(str)); // Результат: false
+// console.log(str.search(pattern)); // Результат: -1
 
 // // Приклад 4
-// const names = "file.txt log.txt file_1.txt 1.txt";
+// const names = "file.txt log.txt file_1.txt 1.txt fileatxt";
 // const pattern = /[^0-9].txt/g;
-// const matches = names.match(pattern); // Результат: ?
-// console.log(matches); // Результат: ?
 
-// // Давайте спробуємо знайти дату - 01.01.1999
-// // dd.mm.yyyy
+// const matches = names.match(pattern);
+// console.log(matches); // Результат: [ 'e.txt', 'g.txt', 'eatxt' ]
+
+// Давайте спробуємо знайти дату - 01.01.1999
+// dd.mm.yyyy
 // const dates =
 //   "01.01.1999 05.08.2015 03.02.2000 07.09.1976 08.08.8888 99.99.2000";
 // const pattern = /[0-9][0-9]\.[0-9][0-9]\.[0-9][0-9][0-9][0-9]/g;
@@ -400,8 +417,8 @@ $ — долар. Позначає кінець рядка.
 // const matches = dates.match(pattern);
 // console.log(matches);
 
-// //Давайте трохи додато валідацію
-// //dd.mm.yyyy
+//Давайте трохи додато валідацію
+//dd.mm.yyyy
 // const dates =
 //   "01.01.1999 05.08.2015 03.02.2000 07.09.1976 08.08.8888 99.99.2000";
 // const pattern = /[0-3][0-9]\.[0-1][0-9]\.[12][09][0-9][0-9]/g;
@@ -414,7 +431,7 @@ $ — долар. Позначає кінець рядка.
     оскільки дні можуть бути тільки до 31, але це обмежує діапазон до потенційно коректних значень.
     [0-1][0-9] — місяці від 00 до 19, що також не є точною перевіркою 
     (місяць може бути тільки від 01 до 12), але обмежує діапазон.
-    [12][09][0-9][0-9] — перевіряє рік, починаючи з 1900 до 2099. 
+    [12][09][0-9][0-9] — перевіряє рік, починаючи з 1000 до 2999. 
 */
 
 // Давайте окремо розберемо дні. Вони бувають від 1 до 31
@@ -423,10 +440,8 @@ $ — долар. Позначає кінець рядка.
 // 1,2 - друга може бути від 0 до 9 - [12][0-9]
 // 3 - друга тільки 0 та 1 - 3[01]
 
-//
-
 // const dates = "01 02 11 12 13 21 22 23 25 30 31 32 41 42 50";
-// const pattern = /?/g;
+// const pattern = /0[1-9]|[12][0-9]|3[0-1]/g;
 
 // const matches = dates.match(pattern);
 // console.log(matches);
@@ -434,7 +449,7 @@ $ — долар. Позначає кінець рядка.
 /* 
     --- Квантифікатори та кількісні обмеження  
     
-    Квантатори та кількісні обмеження в регулярних виразах дозволяють нам визначити, 
+    Квантифікатори та кількісні обмеження в регулярних виразах дозволяють нам визначити, 
     скількі разів певний символ або група символів повинні з'являтися для того, щоб 
     відповідати шаблону. 
     Це дає можливість задавати точні умови для пошуку або перевірки тексту.
@@ -469,50 +484,50 @@ $ — долар. Позначає кінець рядка.
 
 // console.log(re.test("abc")); // Результат: true
 // console.log(re.test("abbbbbbbbbbbbbbbc")); // Результат: true
-// console.log(re.test("ac")); // Результат: ?
+// console.log(re.test("ac")); // Результат: true
 
 // // Приклад 3
 // const names = "log.txt log1.txt log2.txt log3.txt log33.txt, logs.txt";
 // const pattern = /log\d*\.txt/g;
 // const matches = names.match(pattern);
 
-// console.log(matches);   // Результат: ?
+// console.log(matches);   // Результат: [ 'log.txt', 'log1.txt', 'log2.txt', 'log3.txt', 'log33.txt' ]
 
 // // Також ми можемо вказати кількість повторень
 // console.log(/abc/.test("abbc")); // Результат: false
 // console.log(/ab{2,4}c/.test("abc")); // Результат: false
 // console.log(/ab{2,4}c/.test("abbbbbbbc")); // Результат: false
-// console.log(/ab{2,4}c/.test("abbbc")); // Результат: ?
-// console.log(/ab{2,}c/.test("abbbbbbbbbbbc")); // Результат: ?
-// console.log(/ab{2,}c/.test("abc")); // Результат: ?
-// console.log(/ab{2}c/.test("abc")); // Результат: ?
-// console.log(/ab{2}c/.test("abbc")); // Результат: ?
-// console.log(/ab{2}c/.test("abbbc")); // Результат: ?
+// console.log(/ab{2,4}c/.test("abbbc")); // Результат: true
+// console.log(/ab{2,}c/.test("abbbbbbbbbbbc")); // Результат: true
+// console.log(/ab{2,}c/.test("abc")); // Результат: false
+// console.log(/ab{2}c/.test("abc")); // Результат: false
+// console.log(/ab{2}c/.test("abbc")); // Результат: true
+// console.log(/ab{2}c/.test("abbbc")); // Результат: false
 
 // let str1 = "The number was 9.9997 but we rounded it off to 10.0.";
 // const regex = /[0-9]{2,3}/g; // буде знаходити всі підрядки, які складаються з двох або трьох цифр у рядку.
 
-// console.log(regex.test(str1));  // Результат: true
+// console.log(regex.test(str1)); // Результат: true
 // console.log(str1.match(regex)); // Результат: [ '999', '10' ]
 
 // let str1 = "The number was 9.9997 but we rounded it off to 10.0.";
 // const regex = /[0-9]{2,}/g; // означає 2 або більше цифр
 
-// console.log(regex.test(str1));  // Результат: ?
-// console.log(str1.match(regex)); // Результат: ?
+// console.log(regex.test(str1)); // Результат: true
+// console.log(str1.match(regex)); // Результат: [ '9997', '10' ]
 
 // let str1 = "The number was 9.9997 but we rounded it off to 10.0.";
 // const regex = /[0-9]{3}/g; // знаходитиме лише 3 цифри, ні меньше і ні більше
 
-// console.log(regex.test(str1)); // Результат: ?
-// console.log(str1.match(regex)); // Результат: ?
+// console.log(regex.test(str1)); // Результат: true
+// console.log(str1.match(regex)); // Результат: [ '999' ]
 
 // ? - 0 чи 1 повторення
 // console.log(/ab?c/.test("abc")); // Результат: true
 // console.log(/ab?c/.test("ac")); // Результат: true
 // console.log(/ab?c/.test("abbc")); // Рядок "abbc" не відповідає шаблону, оскільки після 'a' і 'b', є ще один 'b', а регулярний вираз очікує максимум один 'b'.
 
-// // Ще приклад з ?
+// Ще приклад з ?
 // let str1 = "The car is parked in the garage.";
 // const regex = /[T]he/g;
 
@@ -523,26 +538,26 @@ $ — долар. Позначає кінець рядка.
 
 // const regex1 = /[T]?he/g;
 
-// console.log(regex.test(str1)); // Результат: ?
-// console.log(str1.match(regex1)); // Результат: ?
+// console.log(regex1.test(str1)); // Результат: true
+// console.log(str1.match(regex1)); // Результат: [ 'The', 'he' ]
 
 // + - 1 чи більше повторення
 // const pattern = /ab*c/;
 
 // console.log(pattern.test("abc")); // Результат: true
 // console.log(pattern.test("abbbbbbbbbbbbc")); // Результат: true
-// console.log(pattern.test("ac")); // Результат: ?
+// console.log(pattern.test("ac")); // Результат: true
 
 // // Приклад з +
 // let str1 = "The fat cat sat on the mat.";
 // const regex = /c.+t/;
 
-// console.log(regex.test(str1)); // Результат: ?
-// console.log(str1.match(regex)); // Результат: ?
+// console.log(regex.test(str1)); // Результат: true
+// console.log(str1.match(regex)); // Результат: [ 'cat sat on the mat' ]
 
 // --- Якоря ---
 
-// //  Початок рядка '^'
+//  Початок рядка '^'
 // let str1 = "Mary had a little lamb";
 // const regex = /^Mary/;
 
@@ -556,7 +571,7 @@ $ — долар. Позначає кінець рядка.
 // let str1 = "The car is parked in the garage.";
 // const regex = /^(T|t)he/;
 
-// console.log(str1.match(regex)); // Результат: ?
+// console.log(str1.match(regex)); // Результат: 'The'
 
 // Кінець рядка '$'
 // let str1 = "it's fleece was white as snow";
@@ -582,8 +597,8 @@ $ — долар. Позначає кінець рядка.
 // const regexp = /^\d\d:\d\d$/;
 
 // console.log(regexp.test(goodInput)); // Результат: true
-// console.log(regexp.test(badInput)); // Результат: ?
-// console.log(regexp.test(badInput1)); // Результат: ?
+// console.log(regexp.test(badInput)); // Результат: false
+// console.log(regexp.test(badInput1)); // Результат: false
 
 /* 
     ---- Прапори регулярних виразів ----
@@ -624,6 +639,7 @@ $ — долар. Позначає кінець рядка.
 // // Ще приклад
 // const str = "The fat cat sat on the mat.";
 // const regex = /The/gi;
+
 // console.log("А що саме? " + str.match(regex));
 
 // Наша задача - замінити мишей на ховрахів
@@ -676,7 +692,7 @@ $ — долар. Позначає кінець рядка.
 // const res = str.replace(regex, "*");
 // console.log(res);
 
-// Приклад з кінцем речення
+// // Приклад з кінцем речення
 // let str = `Іванко: 1
 // Михайло: 2
 // Ганна: 3`;
