@@ -19,33 +19,36 @@
 */
 
 // const clients = ["Mango", "Poly", "Ajax"];
+
 // console.log(clients);
 
 /*
   Використання конструктора Array:
 */
 
-// // Порожній масив
+// Порожній масив
 // const emptyArray = new Array();
 // console.log(emptyArray);
 
-// // Масив з визначеними елементами
+// Масив з визначеними елементами
 // const numbers = new Array(1, 2, 3, 4, 5);
 // console.log(numbers);
 
-// // Масив з певною довжиною (без ініціалізації елементів)
-// const emptySlots = new Array(6); // створює масив з 5 "порожніми" місцями
+// Масив з певною довжиною (без ініціалізації елементів)
+// const emptySlots = new Array(6); // створює масив з 6 "порожніми" місцями
 // console.log(emptySlots); // [ <6 empty items> ]
 
 /*
   Додавання елементів
 */
+
 // const emptySlots = new Array(6); // створює масив з 5 "порожніми" місцями
 // console.log(emptySlots); // [ <6 empty items> ]
 
 // emptySlots[0] = "A";
 // emptySlots[1] = "B";
 // emptySlots[3] = "C";
+
 // console.log(emptySlots);
 
 // За допомогою розгорнутих виразів (spread operator):
@@ -127,8 +130,8 @@
 // ];
 
 // // Доступ до елементів багатовимірного масиву:
-// console.log(matrix[0][1]); // Результат: ?
-// console.log(matrix[2][0]); // Результат: ?
+// // console.log(matrix[0][1]); // Результат: 2
+// // console.log(matrix[2][0]); // Результат: 7
 
 // Зміна значення елементів багатовимірного масиву:
 
@@ -155,9 +158,11 @@
 // console.log(second);
 // console.log(third);
 
-// // Деструктуризація масиву з пропуском значень
+// console.log(numbers)
 
-// const colors = ['red', 'green', 'blue'];
+// Деструктуризація масиву з пропуском значень
+
+// const colors = ["red", "green", "blue"];
 // const [, secondColor] = colors;
 
 // console.log(secondColor);
@@ -199,8 +204,8 @@
 // const clients = ["Mango", "Poly", "Ajax"];
 // const lastElementIndex = clients.length - 1;
 
-// console.log(lastElementIndex); // Результат: ?
-// console.log(clients[lastElementIndex]); // Результат: ?
+// console.log(lastElementIndex); // Результат: 2
+// console.log(clients[lastElementIndex]); // Результат: "Ajax"
 
 /*  
   ---- Методи масивів 
@@ -217,7 +222,7 @@
 /* 
   Метод push() додає один або декілька елементів наприкінці масиву, 
   без необхідності зазначати індекси елементів, що додаються. 
- */
+*/
 
 // const numbers = [];
 
@@ -233,7 +238,7 @@
 // numbers.push(4);
 // console.log(numbers);
 
-// numbers.push(5, 6);
+// numbers.push(5, "Hello!");
 // console.log(numbers);
 
 /* 
@@ -274,7 +279,7 @@
 */
 
 // const fruits = ["Apple", "Banana"];
-// // console.log(fruits);
+// console.log(fruits);
 
 // // Додаємо елементи на початок масиву
 // fruits.unshift("Mango", "Orange");
@@ -328,17 +333,17 @@
 */
 
 // const clients = ["Mango", "Ajax", "Poly", "Kiwi"];
-// console.log(clients.slice(1, 3)); // Результат: ?
-// console.log(clients); // Результат: ?
+// console.log(clients.slice(1, 3)); // Результат: [ 'Ajax', 'Poly' ]
+// console.log(clients); // Результат: [ 'Mango', 'Ajax', 'Poly', 'Kiwi' ]
 
 // // Якщо begin і end не зазначені, буде створена повна копія вихідного масиву.
 // const clients = ["Mango", "Ajax", "Poly", "Kiwi"];
-// console.log(clients.slice()); // Результат: ?
+// console.log(clients.slice()); // Результат: [ 'Mango', 'Ajax', 'Poly', 'Kiwi' ]
 
 // // Якщо не зазначено end, копіювання буде зі start і до кінця вихідного масиву.
 // const clients = ["Mango", "Ajax", "Poly", "Kiwi"];
 // console.log(clients.slice(1)); // Результат: ['Ajax', 'Poly', 'Kiwi']
-// console.log(clients.slice(2)); // Результат: ?
+// console.log(clients.slice(2)); // Результат: [ 'Poly', 'Kiwi' ]
 
 /* 
   --- splice(position, num)
@@ -352,16 +357,41 @@
 // const deletedScores = scores.splice(0, 3);
 
 // // Тепер масив scores містить два елементи
-// console.log(scores); // Результат: ?
+// console.log(scores); // Результат: [ 4, 5 ]
 
 // // А масив deletedScores містить три видалені елементи
-// console.log(deletedScores); // Результат: ?
+// console.log(deletedScores); // Результат: [ 1, 2, 3 ]
 
 /* 
   --- Метод sort() в JavaScript використовується для сортування елементів масиву. 
   За замовчуванням sort() сортує елементи як строки в алфавітному порядку, навіть якщо це числа. 
   Це може призвести до неочікуваних результатів, особливо при роботі з числами.
 */
+
+const f1 = (a, b) => {
+  return a + b;
+};
+
+const f2 = (a, b) => {
+  return a - b;
+};
+
+const result = (text, func) => {
+  let funcRes = func(1, 3);
+  let a = `${text}: ${funcRes}`;
+
+  return a;
+};
+
+console.log(result("Результат додавання", f1));
+console.log(result("Результат віднімання", f2));
+
+let items = [1, 3, 5];
+() => {};
+
+items.forEach((item) => {
+  console.log(item);
+});
 
 // const fruits = ["Banana", "Apple", "Cherry", "Mango"];
 // fruits.sort();
@@ -430,7 +460,7 @@
 // console.log("------------------------");
 
 // // Метод перебирання forEach
-// numbers.forEach(function (number, index) {
+// numbers.forEach((number, index) => {
 //   console.log(`Індекс ${index}, значення ${number}`);
 // });
 
@@ -485,12 +515,12 @@
 // console.log(positiveValues); // Результат: [51, 27, 21, 42]
 
 // const negativeValues = values.filter((value) => value < 0);
-// console.log(negativeValues); // Результат: ?
+// console.log(negativeValues); // Результат: [ -3, -68, -37 ]
 
 // const bigValues = values.filter((value) => value > 1000);
-// console.log(bigValues); // Результат: ?
+// console.log(bigValues); // Результат: []
 
-// // Оригінальний масив не змінився
+// Оригінальний масив не змінився
 // console.log(values); // Результат: [51, -3, 27, 21, -68, 42, -37]
 
 /* 
@@ -613,7 +643,7 @@
 
 // console.log(colorPickerOptions.find((option) => option.label === "blue"));
 // console.log(colorPickerOptions.find((option) => option.label === "pink"));
-// console.log(colorPickerOptions.find((option) => option.label === "white"));
+// console.log(colorPickerOptions.find((option) => option.label === "white")); // Результат: undefined
 
 /* 
   --- findIndex(callback) - це сучасна заміна методу indexOf(). 
@@ -638,7 +668,7 @@
 
 // console.log(colorPickerOptions.findIndex((option) => option.label === "blue"));
 // console.log(colorPickerOptions.findIndex((option) => option.label === "pink"));
-// console.log(colorPickerOptions.findIndex((option) => option.label === "white"));
+// console.log(colorPickerOptions.findIndex((option) => option.label === "white"));  // Результат: -1
 
 // ---- Ітерація по масиву
 
@@ -707,41 +737,60 @@
 //   { name: "Компанія C", quantity: 80 },
 // ];
 
-// function findCompanyByName() {}
+// function findCompanyByName(array, companyName) {
+//   for (let company of array) {
+//     if (company.name === companyName) {
+//       return company;
+//     }
+//   }
+//   return;
+// }
 
-// console.log(findCompanyByName()); // Знайде компанію B */
+// console.log(findCompanyByName(companies, "Компанія F")); // Знайде компанію B
 
-// const familyTree = {
-//   name: "Іван",
-//   role: "Дідусь",
-//   children: [
-//     {
-//       name: "Марія",
-//       role: "Дочка",
-//       children: [
-//         {
-//           name: "Олег",
-//           role: "Внук",
-//         },
-//         {
-//           name: "Катя",
-//           role: "Внучка",
-//           children: [
-//             {
-//               name: "Настя",
-//               role: "Правнучка",
-//             },
-//           ],
-//         },
-//       ],
-//     },
-//     {
-//       name: "Петро",
-//       role: "Син",
-//     },
-//   ],
-// };
+const familyTree = {
+  name: "Іван",
+  role: "Дідусь",
+  children: [
+    {
+      name: "Марія",
+      role: "Дочка",
+      children: [
+        {
+          name: "Олег",
+          role: "Внук",
+        },
+        {
+          name: "Катя",
+          role: "Внучка",
+          children: [
+            {
+              name: "Настя",
+              role: "Правнучка",
+            },
+          ],
+        },
+      ],
+    },
+    {
+      name: "Петро",
+      role: "Син",
+    },
+  ],
+};
 
-// function findPersonByName() {}
+function findPersonByName(person, personName) {
+  if (personName === person.name) {
+    return person;
+  }
+  if (person.children) {
+    for (let child of person.children) {
+      const found = findPersonByName(child, personName);
+      if (found) {
+        return found;
+      }
+    }
+  }
+}
 
-// console.log(findPersonByName());
+console.log(findPersonByName(familyTree, "Настя"));
